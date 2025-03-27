@@ -1,1 +1,1 @@
-Camunda-pilot-frontend
+UI framework NPM library for MES written by React
