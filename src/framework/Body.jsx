@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { SplitPane } from '@rexxars/react-split-pane';
 
@@ -19,9 +18,6 @@ const Body = ( props ) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.drawerOpen]);
 
-    let location = useLocation();
-    let pathName = location.pathname;
-
     const marginLeft = drawerOpen ? props.drawerWidth-1 : 56;
     
     return (
@@ -30,7 +26,6 @@ const Body = ( props ) => {
                 ?
             <div style={{ marginLeft: marginLeft }}>
                 <TabsTypeBody 
-                    pathName={ pathName }
                     options={ bodyProps.tabsOptions }
                     presenterMap={ presenterMap }
                 />

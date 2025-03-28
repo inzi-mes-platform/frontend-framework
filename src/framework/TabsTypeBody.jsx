@@ -1,12 +1,17 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 import DynamicTabs from './widgets/tabs/DynamicTabs';
 
 const TabsTypeBody = (props) => {
 
-    const { options, pathName, presenterMap } = props;
+    const { options, presenterMap } = props;
 
     const dynamicTabsRef = React.useRef(null);
     const [presenterList, setPresenterList] = React.useState([]);
+
+    let location = useLocation();
+    let pathName = location.pathname;
 
     React.useEffect(()=>{
         setPresenterList(presenterMap);
@@ -14,7 +19,7 @@ const TabsTypeBody = (props) => {
 
     React.useEffect(()=>{
         let target = presenterList.filter(presenter=>{
-            return presenter.key === props.pathName;
+            return presenter.key === location.pathname;
         });
         if(target.length===0) return;
         addTab({
@@ -22,7 +27,6 @@ const TabsTypeBody = (props) => {
             dispName: target[0].dispName,
             children: target[0].presenter
         });
-        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathName]);
 
