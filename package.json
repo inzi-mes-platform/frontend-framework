@@ -1,7 +1,7 @@
 {
-  "name": "inzids-mes-platform-frontend-framework",
+  "name": "inzi-mes-platform-frontend-framework",
   "version": "0.0.1",
-  "description": "React frontend framework library for inzids-mes-framework",
+  "description": "React frontend framework library for inzi-mes-framework",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "private": false,
